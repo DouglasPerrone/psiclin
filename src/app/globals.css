@@ -1,0 +1,150 @@
+@import 'react-quill/dist/quill.snow.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 106 10% 25%;
+
+    --card: 0 0% 100%; /* Changed from slate-50 to white for a cleaner look */
+    --card-foreground: 106 10% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 106 10% 25%;
+
+    --primary: 108 14% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96.1%; /* slate-100 */
+    --secondary-foreground: 106 10% 25%;
+
+    --muted: 210 40% 92.2%; /* slate-200 */
+    --muted-foreground: 106 10% 40%;
+
+    --accent: 210 40% 96.1%; /* slate-100 for hovers */
+    --accent-foreground: 106 10% 25%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 210 40% 89.8%; /* slate-300 */
+    --input: 210 40% 89.8%; /* slate-300 */
+    --ring: 108 14% 60%;
+
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+
+    /* Sidebar specific colors - Light theme */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 106 10% 25%;
+    --sidebar-primary: 108 14% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 96.1%;
+    --sidebar-accent-foreground: 106 10% 25%;
+    --sidebar-border: 210 40% 89.8%;
+    --sidebar-ring: 108 14% 60%;
+  }
+
+  .dark {
+    --background: 106 10% 30%;      /* Darker Moss Green */
+    --foreground: 0 0% 100%;         /* White */
+
+    --card: 106 10% 35%;             /* Slightly Lighter Dark Moss Green */
+    --card-foreground: 0 0% 100%;
+
+    --popover: 106 10% 25%;          /* Even Darker Moss Green */
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 108 14% 69%;          /* Light Green for contrast */
+    --primary-foreground: 106 10% 25%; /* Dark Moss Green text */
+
+    --secondary: 106 10% 40%;        /* Mid-dark Moss Green */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 106 10% 45%;            /* Lighter-mid Moss Green */
+    --muted-foreground: 31 21% 92%;  /* Light gray text */
+
+    --accent: 108 14% 69%;           /* Light Green accent */
+    --accent-foreground: 106 10% 25%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 106 10% 40%;           /* Mid-dark Moss Green for borders */
+    --input: 106 10% 40%;            /* Mid-dark Moss Green for inputs */
+    --ring: 108 14% 69%;             /* Light Green for rings */
+
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+
+    /* Sidebar specific colors - Dark theme */
+    --sidebar-background: 106 10% 35%; /* Matching card background */
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 108 14% 69%;
+    --sidebar-primary-foreground: 106 10% 25%;
+    --sidebar-accent: 106 10% 45%;   /* Matching muted background */
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 106 10% 40%;
+    --sidebar-ring: 108 14% 69%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer base {
+  [data-sidebar], .bg-sidebar {
+    background-color: hsl(var(--sidebar-background)) !important;
+  }
+  [data-sidebar], .text-sidebar-foreground {
+    color: hsl(var(--sidebar-foreground)) !important;
+  }
+  [data-sidebar], .hover\:bg-sidebar-accent:hover {
+    background-color: hsl(var(--sidebar-accent)) !important;
+  }
+  [data-sidebar], .hover\:text-sidebar-accent-foreground:hover {
+    color: hsl(var(--sidebar-accent-foreground)) !important;
+  }
+  [data-sidebar], .text-sidebar-accent-foreground {
+    color: hsl(var(--sidebar-accent-foreground)) !important;
+  }
+  [data-sidebar], .border-sidebar-border {
+    border-color: hsl(var(--sidebar-border)) !important;
+  }
+}
+
+.editor-content h1 {
+  font-size: 1.875rem; /* 3xl */
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.editor-content h2 {
+  font-size: 1.5rem; /* 2xl */
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.editor-content h3 {
+  font-size: 1.25rem; /* xl */
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}

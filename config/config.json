@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "u1171_a5yGIAUO1O",
+    "password": "h6s1HblO..U.KuYk^K4Gv5Mj",
+    "database": "s1171_psiclin",
+    "host": "ca-02.hostmine.com.br",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "u1171_a5yGIAUO1O",
+    "password": "h6s1HblO..U.KuYk^K4Gv5Mj",
+    "database": "s1171_psiclin",
+    "host": "ca-02.hostmine.com.br",
+    "dialect": "mysql"
+  }
+}
