@@ -1,4 +1,5 @@
 import { Sequelize } from 'sequelize';
+import * as mysql2 from 'mysql2';
 import UserModel from '../../models/user';
 import BlogPostModel from '../../models/blogpost';
 import VideoModel from '../../models/video';
@@ -11,6 +12,7 @@ const sequelize = new Sequelize(
   {
     host: process.env.DB_HOST || 'ca-02.hostmine.com.br',
     dialect: 'mysql',
+    dialectModule: mysql2,
     logging: false,
   }
 );

@@ -1,10 +1,10 @@
 import { type VideoData } from '@/components/VideoCard';
-import { prisma } from '@/lib/prisma';
+import { Video as VideoModel } from '@/lib/sequelize';
 import { extractYoutubeId, buildThumbnailUrlFromId } from '@/lib/youtube';
 import VideosGrid from './VideosGrid';
 
 export default async function VideosPage() {
-  const videosFromDb = await prisma.video.findMany({ orderBy: { createdAt: 'desc' } });
+  const videosFromDb = await VideoModel.findAll({ order: [['createdAt', 'DESC']] });
   const videos: VideoData[] = videosFromDb.map((v) => {
     const id = extractYoutubeId(v.url) || '';
     return {
